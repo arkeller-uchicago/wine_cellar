@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Producer resource:
+
+  # CREATE
+  get("/producers/new", { :controller => "producers", :action => "new_form" })
+  post("/create_producer", { :controller => "producers", :action => "create_row" })
+
+  # READ
+  get("/producers", { :controller => "producers", :action => "index" })
+  get("/producers/:id_to_display", { :controller => "producers", :action => "show" })
+
+  # UPDATE
+  get("/producers/:prefill_with_id/edit", { :controller => "producers", :action => "edit_form" })
+  post("/update_producer/:id_to_modify", { :controller => "producers", :action => "update_row" })
+
+  # DELETE
+  get("/delete_producer/:id_to_remove", { :controller => "producers", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Region resource:
 
   # CREATE
