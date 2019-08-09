@@ -1,6 +1,9 @@
 class Wine < ApplicationRecord
   # Direct associations
 
+  belongs_to :region,
+             :class_name => "Producer"
+
   belongs_to :coutry,
              :class_name => "Region"
 
