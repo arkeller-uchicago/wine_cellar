@@ -10,7 +10,7 @@ class CellarsController < ApplicationController
   end
 
   def index
-    @cellars = Cellar.all
+    @cellars = Cellar.page(params[:page]).per(10)
 
     render("cellar_templates/index.html.erb")
   end

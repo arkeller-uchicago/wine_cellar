@@ -1,6 +1,6 @@
 class ProducersController < ApplicationController
   def index
-    @producers = Producer.all
+    @producers = Producer.page(params[:page]).per(10)
 
     render("producer_templates/index.html.erb")
   end

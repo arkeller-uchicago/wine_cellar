@@ -1,6 +1,6 @@
 class BottleSizesController < ApplicationController
   def index
-    @bottle_sizes = BottleSize.all
+    @bottle_sizes = BottleSize.page(params[:page]).per(10)
 
     render("bottle_size_templates/index.html.erb")
   end

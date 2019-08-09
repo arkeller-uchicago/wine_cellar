@@ -1,6 +1,6 @@
 class RatingsController < ApplicationController
   def index
-    @ratings = Rating.all
+    @ratings = Rating.page(params[:page]).per(10)
 
     render("rating_templates/index.html.erb")
   end

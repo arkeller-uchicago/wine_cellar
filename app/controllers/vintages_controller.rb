@@ -1,6 +1,6 @@
 class VintagesController < ApplicationController
   def index
-    @vintages = Vintage.all
+    @vintages = Vintage.page(params[:page]).per(10)
 
     render("vintage_templates/index.html.erb")
   end
