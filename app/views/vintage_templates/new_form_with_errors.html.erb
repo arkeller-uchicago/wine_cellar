@@ -1,0 +1,44 @@
+<!-- Validation failure messages -->
+<% if @vintage.present? %>
+  <% if @vintage.errors.any? %>
+    <% @vintage.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new vintage
+</h1>
+
+
+<hr>
+
+<!-- Form vintage start -->
+<form action="/create_vintage" method="post">
+<!-- Form vintage end -->
+
+  <!-- Label and input for year start -->
+  <div class="form-group">
+    <label for="year">
+      Year
+    </label>
+
+    <!-- Input for year start -->
+    <input type="text" id="year" name="year" class="form-control" value="<%= @vintage.year %>">
+    <!-- Input for year end -->
+  </div>
+  <!-- Label and input for year end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create vintage
+  </button>
+</form>
+
+<hr>
+
+<a href="/vintages">
+  Go back
+</a>

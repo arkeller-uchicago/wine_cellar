@@ -1,0 +1,8 @@
+class Vintage < ApplicationRecord
+  # Direct associations
+
+  # Indirect associations
+
+  # Validations
+
+end
