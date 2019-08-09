@@ -74,13 +74,21 @@
 
         <!-- Display rating.user_id start -->
         <td>
-          <%= rating.user.email %>
+          <% if rating.user.present? %>
+            <a href="/users/<%= rating.user.id %>">
+              <%= rating.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display rating.user_id end -->
 
         <!-- Display rating.wine_id start -->
         <td>
-          <%= rating.wine.name %>
+          <% if rating.wine.present? %>
+            <a href="/wines/<%= rating.wine.id %>">
+              <%= rating.wine.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display rating.wine_id end -->
 
@@ -98,13 +106,21 @@
 
         <!-- Display rating.vintage_id start -->
         <td>
-          <%= rating.vintage.year %>
+          <% if rating.vintage.present? %>
+            <a href="/vintages/<%= rating.vintage.id %>">
+              <%= rating.vintage.year %>
+            </a>
+          <% end %>
         </td>
         <!-- Display rating.vintage_id end -->
 
         <!-- Display rating.size_id start -->
         <td>
-          <%= rating.size.name %>
+          <% if rating.size.present? %>
+            <a href="/bottle_sizes/<%= rating.size.id %>">
+              <%= rating.size.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display rating.size_id end -->
 

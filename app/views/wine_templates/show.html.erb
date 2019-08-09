@@ -43,7 +43,11 @@
       </dt>
       <!-- Display bottle_size_id start -->
       <dd>
-        <%= @wine.bottle_size_id %>
+        <% if @wine.bottle_size.present? %>
+          <a href="/types/<%= @wine.bottle_size_id %>">
+            <%= @wine.bottle_size.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display bottle_size_id end -->
 
@@ -52,7 +56,11 @@
       </dt>
       <!-- Display type_id start -->
       <dd>
-        <%= @wine.type_id %>
+        <% if @wine.type.present? %>
+          <a href="/countries/<%= @wine.type_id %>">
+            <%= @wine.type.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display type_id end -->
 
@@ -61,7 +69,11 @@
       </dt>
       <!-- Display coutry_id start -->
       <dd>
-        <%= @wine.coutry_id %>
+        <% if @wine.coutry.present? %>
+          <a href="/regions/<%= @wine.coutry_id %>">
+            <%= @wine.coutry.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display coutry_id end -->
 
@@ -70,7 +82,11 @@
       </dt>
       <!-- Display region_id start -->
       <dd>
-        <%= @wine.region_id %>
+        <% if @wine.region.present? %>
+          <a href="/producers/<%= @wine.region_id %>">
+            <%= @wine.region.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display region_id end -->
 

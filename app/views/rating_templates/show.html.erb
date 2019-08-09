@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @rating.user_id %>
+        <% if @rating.user.present? %>
+          <a href="/users/<%= @rating.user_id %>">
+            <%= @rating.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display wine_id start -->
       <dd>
-        <%= @rating.wine_id %>
+        <% if @rating.wine.present? %>
+          <a href="/wines/<%= @rating.wine_id %>">
+            <%= @rating.wine.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display wine_id end -->
 
@@ -70,7 +78,11 @@
       </dt>
       <!-- Display vintage_id start -->
       <dd>
-        <%= @rating.vintage_id %>
+        <% if @rating.vintage.present? %>
+          <a href="/vintages/<%= @rating.vintage_id %>">
+            <%= @rating.vintage.year %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display vintage_id end -->
 
@@ -79,7 +91,11 @@
       </dt>
       <!-- Display size_id start -->
       <dd>
-        <%= @rating.size_id %>
+        <% if @rating.size.present? %>
+          <a href="/bottle_sizes/<%= @rating.size_id %>">
+            <%= @rating.size.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display size_id end -->
 

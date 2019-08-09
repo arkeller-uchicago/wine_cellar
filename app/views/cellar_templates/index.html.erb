@@ -82,19 +82,31 @@
 
         <!-- Display cellar.user_id start -->
         <td>
-          <%= cellar.user.email %>
+          <% if cellar.user.present? %>
+            <a href="/users/<%= cellar.user.id %>">
+              <%= cellar.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display cellar.user_id end -->
 
         <!-- Display cellar.wine_id start -->
         <td>
-          <%= cellar.wine.name %>
+          <% if cellar.wine.present? %>
+            <a href="/wines/<%= cellar.wine.id %>">
+              <%= cellar.wine.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display cellar.wine_id end -->
 
         <!-- Display cellar.transactions_id start -->
         <td>
-          <%= cellar.transactions.name %>
+          <% if cellar.transactions.present? %>
+            <a href="/transactions/<%= cellar.transactions.id %>">
+              <%= cellar.transactions.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display cellar.transactions_id end -->
 
@@ -106,7 +118,11 @@
 
         <!-- Display cellar.vitage_id start -->
         <td>
-          <%= cellar.vitage.year %>
+          <% if cellar.vitage.present? %>
+            <a href="/vintages/<%= cellar.vitage.id %>">
+              <%= cellar.vitage.year %>
+            </a>
+          <% end %>
         </td>
         <!-- Display cellar.vitage_id end -->
 
@@ -118,7 +134,11 @@
 
         <!-- Display cellar.size_id start -->
         <td>
-          <%= cellar.size.name %>
+          <% if cellar.size.present? %>
+            <a href="/bottle_sizes/<%= cellar.size.id %>">
+              <%= cellar.size.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display cellar.size_id end -->
 
