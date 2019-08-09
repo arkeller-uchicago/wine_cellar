@@ -1,4 +1,6 @@
 ActiveAdmin.register Cellar do
+
+ permit_params :user_id, :wine_id, :transactions_id, :amount, :vitage_id, :remark, :size_id, :trans_date
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
