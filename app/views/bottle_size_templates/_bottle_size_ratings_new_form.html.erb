@@ -57,7 +57,7 @@
     </label>
 
     <!-- Input for vintage_id start -->
-    <input type="text" id="vintage_id" name="vintage_id" class="form-control" value="<%= @rating.vintage_id %>">
+    <%= select_tag(:vintage_id, options_from_collection_for_select(Vintage.all, :id, :year, @rating.vintage_id), :class => "form-control") %>
     <!-- Input for vintage_id end -->
   </div>
   <!-- Label and input for vintage_id end -->
