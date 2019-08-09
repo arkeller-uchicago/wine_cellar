@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Region resource:
+
+  # CREATE
+  get("/regions/new", { :controller => "regions", :action => "new_form" })
+  post("/create_region", { :controller => "regions", :action => "create_row" })
+
+  # READ
+  get("/regions", { :controller => "regions", :action => "index" })
+  get("/regions/:id_to_display", { :controller => "regions", :action => "show" })
+
+  # UPDATE
+  get("/regions/:prefill_with_id/edit", { :controller => "regions", :action => "edit_form" })
+  post("/update_region/:id_to_modify", { :controller => "regions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_region/:id_to_remove", { :controller => "regions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Country resource:
 
   # CREATE
