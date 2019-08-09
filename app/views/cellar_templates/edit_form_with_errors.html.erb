@@ -72,7 +72,7 @@
     </label>
 
     <!-- Input for vitage_id start -->
-    <input type="text" id="vitage_id" name="vitage_id" class="form-control" value="<%= @cellar.vitage_id %>">
+    <%= select_tag(:vitage_id, options_from_collection_for_select(Vintage.all, :id, :year, @cellar.vitage_id), :class => "form-control") %>
     <!-- Input for vitage_id end -->
   </div>
   <!-- Label and input for vitage_id end -->
