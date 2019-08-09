@@ -38,6 +38,90 @@ class CellarsController < ApplicationController
     end
   end
 
+  def create_row_from_wine
+    @cellar = Cellar.new
+
+    @cellar.user_id = params.fetch("user_id")
+    @cellar.wine_id = params.fetch("wine_id")
+    @cellar.transactions_id = params.fetch("transactions_id")
+    @cellar.amount = params.fetch("amount")
+    @cellar.vitage_id = params.fetch("vitage_id")
+    @cellar.remark = params.fetch("remark")
+    @cellar.size_id = params.fetch("size_id")
+    @cellar.trans_date = params.fetch("trans_date")
+
+    if @cellar.valid?
+      @cellar.save
+
+      redirect_to("/wines/#{@cellar.wine_id}", notice: "Cellar created successfully.")
+    else
+      render("cellar_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_vintage
+    @cellar = Cellar.new
+
+    @cellar.user_id = params.fetch("user_id")
+    @cellar.wine_id = params.fetch("wine_id")
+    @cellar.transactions_id = params.fetch("transactions_id")
+    @cellar.amount = params.fetch("amount")
+    @cellar.vitage_id = params.fetch("vitage_id")
+    @cellar.remark = params.fetch("remark")
+    @cellar.size_id = params.fetch("size_id")
+    @cellar.trans_date = params.fetch("trans_date")
+
+    if @cellar.valid?
+      @cellar.save
+
+      redirect_to("/vintages/#{@cellar.vitage_id}", notice: "Cellar created successfully.")
+    else
+      render("cellar_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_bottle_size
+    @cellar = Cellar.new
+
+    @cellar.user_id = params.fetch("user_id")
+    @cellar.wine_id = params.fetch("wine_id")
+    @cellar.transactions_id = params.fetch("transactions_id")
+    @cellar.amount = params.fetch("amount")
+    @cellar.vitage_id = params.fetch("vitage_id")
+    @cellar.remark = params.fetch("remark")
+    @cellar.size_id = params.fetch("size_id")
+    @cellar.trans_date = params.fetch("trans_date")
+
+    if @cellar.valid?
+      @cellar.save
+
+      redirect_to("/bottle_sizes/#{@cellar.size_id}", notice: "Cellar created successfully.")
+    else
+      render("cellar_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_transaction
+    @cellar = Cellar.new
+
+    @cellar.user_id = params.fetch("user_id")
+    @cellar.wine_id = params.fetch("wine_id")
+    @cellar.transactions_id = params.fetch("transactions_id")
+    @cellar.amount = params.fetch("amount")
+    @cellar.vitage_id = params.fetch("vitage_id")
+    @cellar.remark = params.fetch("remark")
+    @cellar.size_id = params.fetch("size_id")
+    @cellar.trans_date = params.fetch("trans_date")
+
+    if @cellar.valid?
+      @cellar.save
+
+      redirect_to("/transactions/#{@cellar.transactions_id}", notice: "Cellar created successfully.")
+    else
+      render("cellar_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @cellar = Cellar.find(params.fetch("prefill_with_id"))
 

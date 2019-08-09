@@ -6,6 +6,8 @@ class WinesController < ApplicationController
   end
 
   def show
+    @rating = Rating.new
+    @cellar = Cellar.new
     @wine = Wine.find(params.fetch("id_to_display"))
 
     render("wine_templates/show.html.erb")
@@ -32,6 +34,86 @@ class WinesController < ApplicationController
       @wine.save
 
       redirect_back(:fallback_location => "/wines", :notice => "Wine created successfully.")
+    else
+      render("wine_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_type
+    @wine = Wine.new
+
+    @wine.name = params.fetch("name")
+    @wine.bottle_size_id = params.fetch("bottle_size_id")
+    @wine.type_id = params.fetch("type_id")
+    @wine.coutry_id = params.fetch("coutry_id")
+    @wine.region_id = params.fetch("region_id")
+    @wine.producer_id = params.fetch("producer_id")
+    @wine.picture = params.fetch("picture")
+
+    if @wine.valid?
+      @wine.save
+
+      redirect_to("/types/#{@wine.bottle_size_id}", notice: "Wine created successfully.")
+    else
+      render("wine_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_country
+    @wine = Wine.new
+
+    @wine.name = params.fetch("name")
+    @wine.bottle_size_id = params.fetch("bottle_size_id")
+    @wine.type_id = params.fetch("type_id")
+    @wine.coutry_id = params.fetch("coutry_id")
+    @wine.region_id = params.fetch("region_id")
+    @wine.producer_id = params.fetch("producer_id")
+    @wine.picture = params.fetch("picture")
+
+    if @wine.valid?
+      @wine.save
+
+      redirect_to("/countries/#{@wine.type_id}", notice: "Wine created successfully.")
+    else
+      render("wine_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_region
+    @wine = Wine.new
+
+    @wine.name = params.fetch("name")
+    @wine.bottle_size_id = params.fetch("bottle_size_id")
+    @wine.type_id = params.fetch("type_id")
+    @wine.coutry_id = params.fetch("coutry_id")
+    @wine.region_id = params.fetch("region_id")
+    @wine.producer_id = params.fetch("producer_id")
+    @wine.picture = params.fetch("picture")
+
+    if @wine.valid?
+      @wine.save
+
+      redirect_to("/regions/#{@wine.coutry_id}", notice: "Wine created successfully.")
+    else
+      render("wine_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_producer
+    @wine = Wine.new
+
+    @wine.name = params.fetch("name")
+    @wine.bottle_size_id = params.fetch("bottle_size_id")
+    @wine.type_id = params.fetch("type_id")
+    @wine.coutry_id = params.fetch("coutry_id")
+    @wine.region_id = params.fetch("region_id")
+    @wine.producer_id = params.fetch("producer_id")
+    @wine.picture = params.fetch("picture")
+
+    if @wine.valid?
+      @wine.save
+
+      redirect_to("/producers/#{@wine.region_id}", notice: "Wine created successfully.")
     else
       render("wine_templates/new_form_with_errors.html.erb")
     end

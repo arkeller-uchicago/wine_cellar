@@ -6,6 +6,8 @@ class BottleSizesController < ApplicationController
   end
 
   def show
+    @rating = Rating.new
+    @cellar = Cellar.new
     @bottle_size = BottleSize.find(params.fetch("id_to_display"))
 
     render("bottle_size_templates/show.html.erb")

@@ -6,6 +6,7 @@ class RegionsController < ApplicationController
   end
 
   def show
+    @wine = Wine.new
     @region = Region.find(params.fetch("id_to_display"))
 
     render("region_templates/show.html.erb")

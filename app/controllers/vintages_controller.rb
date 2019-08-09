@@ -6,6 +6,8 @@ class VintagesController < ApplicationController
   end
 
   def show
+    @rating = Rating.new
+    @cellar = Cellar.new
     @vintage = Vintage.find(params.fetch("id_to_display"))
 
     render("vintage_templates/show.html.erb")

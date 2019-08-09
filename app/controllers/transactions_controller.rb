@@ -6,6 +6,7 @@ class TransactionsController < ApplicationController
   end
 
   def show
+    @cellar = Cellar.new
     @transaction = Transaction.find(params.fetch("id_to_display"))
 
     render("transaction_templates/show.html.erb")

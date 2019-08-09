@@ -6,6 +6,7 @@ class TypesController < ApplicationController
   end
 
   def show
+    @wine = Wine.new
     @type = Type.find(params.fetch("id_to_display"))
 
     render("type_templates/show.html.erb")

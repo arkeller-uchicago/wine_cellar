@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # CREATE
   get("/ratings/new", { :controller => "ratings", :action => "new_form" })
   post("/create_rating", { :controller => "ratings", :action => "create_row" })
+  post("/create_rating_from_bottle_size", { :controller => "ratings", :action => "create_row_from_bottle_size" })
+  post("/create_rating_from_vintage", { :controller => "ratings", :action => "create_row_from_vintage" })
+  post("/create_rating_from_wine", { :controller => "ratings", :action => "create_row_from_wine" })
 
   # READ
   get("/ratings", { :controller => "ratings", :action => "index" })
@@ -49,6 +52,10 @@ Rails.application.routes.draw do
   # CREATE
   get("/cellars/new", { :controller => "cellars", :action => "new_form" })
   post("/create_cellar", { :controller => "cellars", :action => "create_row" })
+  post("/create_cellar_from_transaction", { :controller => "cellars", :action => "create_row_from_transaction" })
+  post("/create_cellar_from_bottle_size", { :controller => "cellars", :action => "create_row_from_bottle_size" })
+  post("/create_cellar_from_vintage", { :controller => "cellars", :action => "create_row_from_vintage" })
+  post("/create_cellar_from_wine", { :controller => "cellars", :action => "create_row_from_wine" })
 
   # READ
   get("/cellars", { :controller => "cellars", :action => "index" })
@@ -187,6 +194,10 @@ Rails.application.routes.draw do
   # CREATE
   get("/wines/new", { :controller => "wines", :action => "new_form" })
   post("/create_wine", { :controller => "wines", :action => "create_row" })
+  post("/create_wine_from_producer", { :controller => "wines", :action => "create_row_from_producer" })
+  post("/create_wine_from_region", { :controller => "wines", :action => "create_row_from_region" })
+  post("/create_wine_from_country", { :controller => "wines", :action => "create_row_from_country" })
+  post("/create_wine_from_type", { :controller => "wines", :action => "create_row_from_type" })
 
   # READ
   get("/wines", { :controller => "wines", :action => "index" })

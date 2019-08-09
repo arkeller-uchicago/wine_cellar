@@ -36,6 +36,63 @@ class RatingsController < ApplicationController
     end
   end
 
+  def create_row_from_wine
+    @rating = Rating.new
+
+    @rating.user_id = params.fetch("user_id")
+    @rating.wine_id = params.fetch("wine_id")
+    @rating.value = params.fetch("value")
+    @rating.comment = params.fetch("comment")
+    @rating.vintage_id = params.fetch("vintage_id")
+    @rating.size_id = params.fetch("size_id")
+
+    if @rating.valid?
+      @rating.save
+
+      redirect_to("/wines/#{@rating.wine_id}", notice: "Rating created successfully.")
+    else
+      render("rating_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_vintage
+    @rating = Rating.new
+
+    @rating.user_id = params.fetch("user_id")
+    @rating.wine_id = params.fetch("wine_id")
+    @rating.value = params.fetch("value")
+    @rating.comment = params.fetch("comment")
+    @rating.vintage_id = params.fetch("vintage_id")
+    @rating.size_id = params.fetch("size_id")
+
+    if @rating.valid?
+      @rating.save
+
+      redirect_to("/vintages/#{@rating.vintage_id}", notice: "Rating created successfully.")
+    else
+      render("rating_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_bottle_size
+    @rating = Rating.new
+
+    @rating.user_id = params.fetch("user_id")
+    @rating.wine_id = params.fetch("wine_id")
+    @rating.value = params.fetch("value")
+    @rating.comment = params.fetch("comment")
+    @rating.vintage_id = params.fetch("vintage_id")
+    @rating.size_id = params.fetch("size_id")
+
+    if @rating.valid?
+      @rating.save
+
+      redirect_to("/bottle_sizes/#{@rating.size_id}", notice: "Rating created successfully.")
+    else
+      render("rating_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @rating = Rating.find(params.fetch("prefill_with_id"))
 

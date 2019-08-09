@@ -6,6 +6,7 @@ class ProducersController < ApplicationController
   end
 
   def show
+    @wine = Wine.new
     @producer = Producer.find(params.fetch("id_to_display"))
 
     render("producer_templates/show.html.erb")
