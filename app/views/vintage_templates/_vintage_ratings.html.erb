@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @vintage.ratings.each do |rating| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/ratings/<%= rating.id %>">
           <%= rating.user_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_rating_from_vintage/<%= rating.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="vintage_ratings_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "vintage_templates/vintage_ratings_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

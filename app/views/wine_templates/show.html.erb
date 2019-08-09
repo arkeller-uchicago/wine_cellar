@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link wine start -->
       <div class="col">
         <a href="/wines/<%= @wine.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit wine
         </a>
       </div>
-      <!-- Edit link wine end -->
 
-      <!-- Delete link wine start -->
       <div class="col">
         <a href="/delete_wine/<%= @wine.id %>" class="btn btn-block btn-outline-secondary">
           Delete wine
         </a>
       </div>
-      <!-- Delete link wine end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @wine.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Bottle size
       </dt>
-      <!-- Display bottle_size_id start -->
       <dd>
         <% if @wine.bottle_size.present? %>
           <a href="/types/<%= @wine.bottle_size_id %>">
@@ -49,12 +42,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display bottle_size_id end -->
 
       <dt>
         Type
       </dt>
-      <!-- Display type_id start -->
       <dd>
         <% if @wine.type.present? %>
           <a href="/countries/<%= @wine.type_id %>">
@@ -62,12 +53,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display type_id end -->
 
       <dt>
         Coutry
       </dt>
-      <!-- Display coutry_id start -->
       <dd>
         <% if @wine.coutry.present? %>
           <a href="/regions/<%= @wine.coutry_id %>">
@@ -75,12 +64,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display coutry_id end -->
 
       <dt>
         Region
       </dt>
-      <!-- Display region_id start -->
       <dd>
         <% if @wine.region.present? %>
           <a href="/producers/<%= @wine.region_id %>">
@@ -88,48 +75,38 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display region_id end -->
 
       <dt>
         Producer
       </dt>
-      <!-- Display producer_id start -->
       <dd>
         <%= @wine.producer_id %>
       </dd>
-      <!-- Display producer_id end -->
 
       <dt>
         Picture
       </dt>
-      <!-- Display picture start -->
       <dd>
         <img src="<%= @wine.picture %>" class="img-fluid">
       </dd>
-      <!-- Display picture end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@wine.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@wine.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "wine_templates/wine_cellars" %>
@@ -141,4 +118,3 @@
     <%= render partial: "wine_templates/wine_ratings" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

@@ -11,55 +11,44 @@
         </a>
       </div>
 
-      <!-- Edit link bottle_size start -->
       <div class="col">
         <a href="/bottle_sizes/<%= @bottle_size.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit bottle size
         </a>
       </div>
-      <!-- Edit link bottle_size end -->
 
-      <!-- Delete link bottle_size start -->
       <div class="col">
         <a href="/delete_bottle_size/<%= @bottle_size.id %>" class="btn btn-block btn-outline-secondary">
           Delete bottle size
         </a>
       </div>
-      <!-- Delete link bottle_size end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @bottle_size.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@bottle_size.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@bottle_size.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "bottle_size_templates/bottle_size_cellars" %>
@@ -71,4 +60,3 @@
     <%= render partial: "bottle_size_templates/bottle_size_ratings" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

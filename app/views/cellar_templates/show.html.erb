@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link cellar start -->
       <div class="col">
         <% if current_user == @cellar.user %>
           <a href="/cellars/<%= @cellar.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link cellar end -->
 
-      <!-- Delete link cellar start -->
       <div class="col">
         <% if current_user == @cellar.user %>
           <a href="/delete_cellar/<%= @cellar.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link cellar end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @cellar.user.present? %>
           <a href="/users/<%= @cellar.user_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Wine
       </dt>
-      <!-- Display wine_id start -->
       <dd>
         <% if @cellar.wine.present? %>
           <a href="/wines/<%= @cellar.wine_id %>">
@@ -57,12 +50,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display wine_id end -->
 
       <dt>
         Transactions
       </dt>
-      <!-- Display transactions_id start -->
       <dd>
         <% if @cellar.transactions.present? %>
           <a href="/transactions/<%= @cellar.transactions_id %>">
@@ -70,21 +61,17 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display transactions_id end -->
 
       <dt>
         Amount
       </dt>
-      <!-- Display amount start -->
       <dd>
         <%= @cellar.amount %>
       </dd>
-      <!-- Display amount end -->
 
       <dt>
         Vitage
       </dt>
-      <!-- Display vitage_id start -->
       <dd>
         <% if @cellar.vitage.present? %>
           <a href="/vintages/<%= @cellar.vitage_id %>">
@@ -92,21 +79,17 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display vitage_id end -->
 
       <dt>
         Remark
       </dt>
-      <!-- Display remark start -->
       <dd>
         <%= @cellar.remark %>
       </dd>
-      <!-- Display remark end -->
 
       <dt>
         Size
       </dt>
-      <!-- Display size_id start -->
       <dd>
         <% if @cellar.size.present? %>
           <a href="/bottle_sizes/<%= @cellar.size_id %>">
@@ -114,37 +97,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display size_id end -->
 
       <dt>
         Trans date
       </dt>
-      <!-- Display trans_date start -->
       <dd>
         <%= @cellar.trans_date %>
       </dd>
-      <!-- Display trans_date end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@cellar.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@cellar.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

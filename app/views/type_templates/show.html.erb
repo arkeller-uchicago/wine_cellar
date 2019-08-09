@@ -11,58 +11,46 @@
         </a>
       </div>
 
-      <!-- Edit link type start -->
       <div class="col">
         <a href="/types/<%= @type.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit type
         </a>
       </div>
-      <!-- Edit link type end -->
 
-      <!-- Delete link type start -->
       <div class="col">
         <a href="/delete_type/<%= @type.id %>" class="btn btn-block btn-outline-secondary">
           Delete type
         </a>
       </div>
-      <!-- Delete link type end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @type.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@type.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@type.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "type_templates/type_wines" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @rating.present? %>
   <% if @rating.errors.any? %>
     <% @rating.errors.full_messages.each do |message| %>
@@ -16,81 +15,55 @@
 
 <hr>
 
-<!-- Form rating start -->
 <form action="/create_rating" method="post">
-<!-- Form rating end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @rating.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for wine_id start -->
   <div class="form-group">
     <label for="wine_id">
       Wine
     </label>
 
-    <!-- Input for wine_id start -->
     <%= select_tag(:wine_id, options_from_collection_for_select(Wine.all, :id, :name, @rating.wine_id), :class => "form-control") %>
-    <!-- Input for wine_id end -->
   </div>
-  <!-- Label and input for wine_id end -->
 
-  <!-- Label and input for value start -->
   <div class="form-group">
     <label for="value">
       Value
     </label>
 
-    <!-- Input for value start -->
     <input type="text" id="value" name="value" class="form-control" value="<%= @rating.value %>">
-    <!-- Input for value end -->
   </div>
-  <!-- Label and input for value end -->
 
-  <!-- Label and input for comment start -->
   <div class="form-group">
     <label for="comment">
       Comment
     </label>
 
-    <!-- Input for comment start -->
     <textarea id="comment" name="comment" class="form-control" rows="3"><%= @rating.comment %></textarea>
-    <!-- Input for comment end -->
   </div>
-  <!-- Label and input for comment end -->
 
-  <!-- Label and input for vintage_id start -->
   <div class="form-group">
     <label for="vintage_id">
       Vintage
     </label>
 
-    <!-- Input for vintage_id start -->
     <%= select_tag(:vintage_id, options_from_collection_for_select(Vintage.all, :id, :year, @rating.vintage_id), :class => "form-control") %>
-    <!-- Input for vintage_id end -->
   </div>
-  <!-- Label and input for vintage_id end -->
 
-  <!-- Label and input for size_id start -->
   <div class="form-group">
     <label for="size_id">
       Size
     </label>
 
-    <!-- Input for size_id start -->
     <%= select_tag(:size_id, options_from_collection_for_select(BottleSize.all, :id, :name, @rating.size_id), :class => "form-control") %>
-    <!-- Input for size_id end -->
   </div>
-  <!-- Label and input for size_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create rating

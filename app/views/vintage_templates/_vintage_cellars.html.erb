@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @vintage.cellars.each do |cellar| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/cellars/<%= cellar.id %>">
           <%= cellar.user_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == cellar.user %>
           <a href="/delete_cellar_from_vintage/<%= cellar.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="vintage_cellars_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "vintage_templates/vintage_cellars_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

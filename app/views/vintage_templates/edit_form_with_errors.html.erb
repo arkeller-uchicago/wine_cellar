@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @vintage.errors.any? %>
   <% @vintage.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,21 +12,15 @@
 
 <hr>
 
-<!-- Form vintage start -->
 <form action="/update_vintage/<%= @vintage.id %>" method="post">
-<!-- Form vintage end -->
 
-  <!-- Label and input for year start -->
   <div class="form-group">
     <label for="year">
       Year
     </label>
 
-    <!-- Input for year start -->
     <input type="text" id="year" name="year" class="form-control" value="<%= @vintage.year %>">
-    <!-- Input for year end -->
   </div>
-  <!-- Label and input for year end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update vintage

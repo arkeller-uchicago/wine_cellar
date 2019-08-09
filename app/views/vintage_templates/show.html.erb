@@ -11,55 +11,44 @@
         </a>
       </div>
 
-      <!-- Edit link vintage start -->
       <div class="col">
         <a href="/vintages/<%= @vintage.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit vintage
         </a>
       </div>
-      <!-- Edit link vintage end -->
 
-      <!-- Delete link vintage start -->
       <div class="col">
         <a href="/delete_vintage/<%= @vintage.id %>" class="btn btn-block btn-outline-secondary">
           Delete vintage
         </a>
       </div>
-      <!-- Delete link vintage end -->
     </div>
 
     <dl>
       <dt>
         Year
       </dt>
-      <!-- Display year start -->
       <dd>
         <%= @vintage.year %>
       </dd>
-      <!-- Display year end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@vintage.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@vintage.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "vintage_templates/vintage_cellars" %>
@@ -71,4 +60,3 @@
     <%= render partial: "vintage_templates/vintage_ratings" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

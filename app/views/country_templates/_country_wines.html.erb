@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @country.wines.each do |wine| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/wines/<%= wine.id %>">
           <%= wine.name %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_wine_from_type/<%= wine.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="country_wines_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "country_templates/country_wines_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

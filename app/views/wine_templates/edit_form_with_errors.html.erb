@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @wine.errors.any? %>
   <% @wine.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,94 +12,64 @@
 
 <hr>
 
-<!-- Form wine start -->
 <form action="/update_wine/<%= @wine.id %>" method="post" enctype="multipart/form-data">
-<!-- Form wine end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @wine.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for bottle_size_id start -->
   <div class="form-group">
     <label for="bottle_size_id">
       Bottle size
     </label>
 
-    <!-- Input for bottle_size_id start -->
     <%= select_tag(:bottle_size_id, options_from_collection_for_select(Type.all, :id, :name, @wine.bottle_size_id), :class => "form-control") %>
-    <!-- Input for bottle_size_id end -->
   </div>
-  <!-- Label and input for bottle_size_id end -->
 
-  <!-- Label and input for type_id start -->
   <div class="form-group">
     <label for="type_id">
       Type
     </label>
 
-    <!-- Input for type_id start -->
     <%= select_tag(:type_id, options_from_collection_for_select(Country.all, :id, :name, @wine.type_id), :class => "form-control") %>
-    <!-- Input for type_id end -->
   </div>
-  <!-- Label and input for type_id end -->
 
-  <!-- Label and input for coutry_id start -->
   <div class="form-group">
     <label for="coutry_id">
       Coutry
     </label>
 
-    <!-- Input for coutry_id start -->
     <%= select_tag(:coutry_id, options_from_collection_for_select(Region.all, :id, :name, @wine.coutry_id), :class => "form-control") %>
-    <!-- Input for coutry_id end -->
   </div>
-  <!-- Label and input for coutry_id end -->
 
-  <!-- Label and input for region_id start -->
   <div class="form-group">
     <label for="region_id">
       Region
     </label>
 
-    <!-- Input for region_id start -->
     <%= select_tag(:region_id, options_from_collection_for_select(Producer.all, :id, :name, @wine.region_id), :class => "form-control") %>
-    <!-- Input for region_id end -->
   </div>
-  <!-- Label and input for region_id end -->
 
-  <!-- Label and input for producer_id start -->
   <div class="form-group">
     <label for="producer_id">
       Producer
     </label>
 
-    <!-- Input for producer_id start -->
     <input type="text" id="producer_id" name="producer_id" class="form-control" value="<%= @wine.producer_id %>">
-    <!-- Input for producer_id end -->
   </div>
-  <!-- Label and input for producer_id end -->
 
-  <!-- Label and input for picture start -->
   <div class="form-group">
     <label for="picture">
       Picture
     </label>
 
-    <!-- Input for picture start -->
     <%= cl_image_tag(@wine.picture.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="picture" name="picture" class="form-control">
-    <!-- Input for picture end -->
   </div>
-  <!-- Label and input for picture end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update wine

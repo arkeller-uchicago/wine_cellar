@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link rating start -->
       <div class="col">
         <a href="/ratings/<%= @rating.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit rating
         </a>
       </div>
-      <!-- Edit link rating end -->
 
-      <!-- Delete link rating start -->
       <div class="col">
         <a href="/delete_rating/<%= @rating.id %>" class="btn btn-block btn-outline-secondary">
           Delete rating
         </a>
       </div>
-      <!-- Delete link rating end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @rating.user.present? %>
           <a href="/users/<%= @rating.user_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Wine
       </dt>
-      <!-- Display wine_id start -->
       <dd>
         <% if @rating.wine.present? %>
           <a href="/wines/<%= @rating.wine_id %>">
@@ -53,30 +46,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display wine_id end -->
 
       <dt>
         Value
       </dt>
-      <!-- Display value start -->
       <dd>
         <%= @rating.value %>
       </dd>
-      <!-- Display value end -->
 
       <dt>
         Comment
       </dt>
-      <!-- Display comment start -->
       <dd>
         <%= @rating.comment %>
       </dd>
-      <!-- Display comment end -->
 
       <dt>
         Vintage
       </dt>
-      <!-- Display vintage_id start -->
       <dd>
         <% if @rating.vintage.present? %>
           <a href="/vintages/<%= @rating.vintage_id %>">
@@ -84,12 +71,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display vintage_id end -->
 
       <dt>
         Size
       </dt>
-      <!-- Display size_id start -->
       <dd>
         <% if @rating.size.present? %>
           <a href="/bottle_sizes/<%= @rating.size_id %>">
@@ -97,28 +82,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display size_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@rating.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@rating.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
