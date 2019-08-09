@@ -4,6 +4,8 @@ RSpec.describe Wine, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:bottle_size) }
+
     it { should have_many(:ratings) }
 
     it { should have_many(:cellars) }
