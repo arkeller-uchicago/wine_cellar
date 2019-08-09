@@ -63,7 +63,7 @@
     </label>
 
     <!-- Input for region_id start -->
-    <input type="text" id="region_id" name="region_id" class="form-control" value="<%= @wine.region_id %>">
+    <%= select_tag(:region_id, options_from_collection_for_select(Producer.all, :id, :name, @wine.region_id), :class => "form-control") %>
     <!-- Input for region_id end -->
   </div>
   <!-- Label and input for region_id end -->
