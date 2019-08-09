@@ -88,7 +88,7 @@
     </label>
 
     <!-- Input for size_id start -->
-    <input type="text" id="size_id" name="size_id" class="form-control">
+    <%= select_tag(:size_id, options_from_collection_for_select(BottleSize.all, :id, :name, @cellar.size_id), :class => "form-control") %>
     <!-- Input for size_id end -->
   </div>
   <!-- Label and input for size_id end -->
