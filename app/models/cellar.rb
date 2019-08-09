@@ -1,6 +1,9 @@
 class Cellar < ApplicationRecord
   # Direct associations
 
+  belongs_to :size,
+             :class_name => "BottleSize"
+
   belongs_to :vitage,
              :class_name => "Vintage"
 
