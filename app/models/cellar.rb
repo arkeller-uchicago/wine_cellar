@@ -1,6 +1,9 @@
 class Cellar < ApplicationRecord
   # Direct associations
 
+  belongs_to :transactions,
+             :class_name => "Transaction"
+
   belongs_to :size,
              :class_name => "BottleSize"
 

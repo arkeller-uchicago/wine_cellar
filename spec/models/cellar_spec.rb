@@ -4,6 +4,8 @@ RSpec.describe Cellar, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:transactions) }
+
     it { should belong_to(:size) }
 
     it { should belong_to(:vitage) }
