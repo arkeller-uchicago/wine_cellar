@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for wine_id start -->
-    <input type="text" id="wine_id" name="wine_id" class="form-control" value="<%= @rating.wine_id %>">
+    <%= select_tag(:wine_id, options_from_collection_for_select(Wine.all, :id, :name, @rating.wine_id), :class => "form-control") %>
     <!-- Input for wine_id end -->
   </div>
   <!-- Label and input for wine_id end -->
