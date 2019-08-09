@@ -131,7 +131,7 @@ class CellarsController < ApplicationController
   def update_row
     @cellar = Cellar.find(params.fetch("id_to_modify"))
 
-    @cellar.user_id = params.fetch("user_id")
+    
     @cellar.wine_id = params.fetch("wine_id")
     @cellar.transactions_id = params.fetch("transactions_id")
     @cellar.amount = params.fetch("amount")
