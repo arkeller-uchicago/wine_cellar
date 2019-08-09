@@ -65,6 +65,46 @@ class CellarsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @cellar = Cellar.find(params.fetch("id_to_remove"))
+
+    @cellar.destroy
+
+    redirect_to("/users/#{@cellar.user_id}", notice: "Cellar deleted successfully.")
+  end
+
+  def destroy_row_from_wine
+    @cellar = Cellar.find(params.fetch("id_to_remove"))
+
+    @cellar.destroy
+
+    redirect_to("/wines/#{@cellar.wine_id}", notice: "Cellar deleted successfully.")
+  end
+
+  def destroy_row_from_vitage
+    @cellar = Cellar.find(params.fetch("id_to_remove"))
+
+    @cellar.destroy
+
+    redirect_to("/vintages/#{@cellar.vitage_id}", notice: "Cellar deleted successfully.")
+  end
+
+  def destroy_row_from_size
+    @cellar = Cellar.find(params.fetch("id_to_remove"))
+
+    @cellar.destroy
+
+    redirect_to("/bottle_sizes/#{@cellar.size_id}", notice: "Cellar deleted successfully.")
+  end
+
+  def destroy_row_from_transactions
+    @cellar = Cellar.find(params.fetch("id_to_remove"))
+
+    @cellar.destroy
+
+    redirect_to("/transactions/#{@cellar.transactions_id}", notice: "Cellar deleted successfully.")
+  end
+
   def destroy_row
     @cellar = Cellar.find(params.fetch("id_to_remove"))
 

@@ -63,6 +63,38 @@ class WinesController < ApplicationController
     end
   end
 
+  def destroy_row_from_bottle_size
+    @wine = Wine.find(params.fetch("id_to_remove"))
+
+    @wine.destroy
+
+    redirect_to("/types/#{@wine.bottle_size_id}", notice: "Wine deleted successfully.")
+  end
+
+  def destroy_row_from_type
+    @wine = Wine.find(params.fetch("id_to_remove"))
+
+    @wine.destroy
+
+    redirect_to("/countries/#{@wine.type_id}", notice: "Wine deleted successfully.")
+  end
+
+  def destroy_row_from_coutry
+    @wine = Wine.find(params.fetch("id_to_remove"))
+
+    @wine.destroy
+
+    redirect_to("/regions/#{@wine.coutry_id}", notice: "Wine deleted successfully.")
+  end
+
+  def destroy_row_from_region
+    @wine = Wine.find(params.fetch("id_to_remove"))
+
+    @wine.destroy
+
+    redirect_to("/producers/#{@wine.region_id}", notice: "Wine deleted successfully.")
+  end
+
   def destroy_row
     @wine = Wine.find(params.fetch("id_to_remove"))
 

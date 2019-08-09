@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_rating/:id_to_remove", { :controller => "ratings", :action => "destroy_row" })
+  get("/delete_rating_from_size/:id_to_remove", { :controller => "ratings", :action => "destroy_row_from_size" })
+  get("/delete_rating_from_vintage/:id_to_remove", { :controller => "ratings", :action => "destroy_row_from_vintage" })
+  get("/delete_rating_from_wine/:id_to_remove", { :controller => "ratings", :action => "destroy_row_from_wine" })
+  get("/delete_rating_from_user/:id_to_remove", { :controller => "ratings", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -56,6 +60,11 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_cellar/:id_to_remove", { :controller => "cellars", :action => "destroy_row" })
+  get("/delete_cellar_from_transactions/:id_to_remove", { :controller => "cellars", :action => "destroy_row_from_transactions" })
+  get("/delete_cellar_from_size/:id_to_remove", { :controller => "cellars", :action => "destroy_row_from_size" })
+  get("/delete_cellar_from_vitage/:id_to_remove", { :controller => "cellars", :action => "destroy_row_from_vitage" })
+  get("/delete_cellar_from_wine/:id_to_remove", { :controller => "cellars", :action => "destroy_row_from_wine" })
+  get("/delete_cellar_from_user/:id_to_remove", { :controller => "cellars", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -189,6 +198,10 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_wine/:id_to_remove", { :controller => "wines", :action => "destroy_row" })
+  get("/delete_wine_from_region/:id_to_remove", { :controller => "wines", :action => "destroy_row_from_region" })
+  get("/delete_wine_from_coutry/:id_to_remove", { :controller => "wines", :action => "destroy_row_from_coutry" })
+  get("/delete_wine_from_type/:id_to_remove", { :controller => "wines", :action => "destroy_row_from_type" })
+  get("/delete_wine_from_bottle_size/:id_to_remove", { :controller => "wines", :action => "destroy_row_from_bottle_size" })
 
   #------------------------------
 
