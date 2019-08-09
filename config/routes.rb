@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Type resource:
+
+  # CREATE
+  get("/types/new", { :controller => "types", :action => "new_form" })
+  post("/create_type", { :controller => "types", :action => "create_row" })
+
+  # READ
+  get("/types", { :controller => "types", :action => "index" })
+  get("/types/:id_to_display", { :controller => "types", :action => "show" })
+
+  # UPDATE
+  get("/types/:prefill_with_id/edit", { :controller => "types", :action => "edit_form" })
+  post("/update_type/:id_to_modify", { :controller => "types", :action => "update_row" })
+
+  # DELETE
+  get("/delete_type/:id_to_remove", { :controller => "types", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Bottle size resource:
 
   # CREATE

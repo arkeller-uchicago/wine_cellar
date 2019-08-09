@@ -1,0 +1,41 @@
+<!-- Validation failure messages -->
+<% if @type.errors.any? %>
+  <% @type.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit type #<%= @type.id %>
+</h1>
+
+<hr>
+
+<!-- Form type start -->
+<form action="/update_type/<%= @type.id %>" method="post">
+<!-- Form type end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @type.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update type
+  </button>
+</form>
+
+<hr>
+
+<a href="/types">
+  Go back
+</a>
