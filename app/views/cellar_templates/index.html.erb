@@ -1,0 +1,152 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All cellars
+    </h1>
+
+    <a href="/cellars/new" class="btn btn-block btn-outline-secondary">
+      Add a new cellar
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Wine
+        </th>
+
+        <th>
+          Transactions
+        </th>
+
+        <th>
+          Amount
+        </th>
+
+        <th>
+          Vitage
+        </th>
+
+        <th>
+          Remark
+        </th>
+
+        <th>
+          Size
+        </th>
+
+        <th>
+          Trans date
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @cellars.each do |cellar| %>
+      <tr>
+        <!-- Display cellar.id start -->
+        <td>
+          <%= cellar.id %>
+        </td>
+        <!-- Display cellar.id end -->
+
+        <!-- Display cellar.user_id start -->
+        <td>
+          <%= cellar.user_id %>
+        </td>
+        <!-- Display cellar.user_id end -->
+
+        <!-- Display cellar.wine_id start -->
+        <td>
+          <%= cellar.wine_id %>
+        </td>
+        <!-- Display cellar.wine_id end -->
+
+        <!-- Display cellar.transactions_id start -->
+        <td>
+          <%= cellar.transactions_id %>
+        </td>
+        <!-- Display cellar.transactions_id end -->
+
+        <!-- Display cellar.amount start -->
+        <td>
+          <%= cellar.amount %>
+        </td>
+        <!-- Display cellar.amount end -->
+
+        <!-- Display cellar.vitage_id start -->
+        <td>
+          <%= cellar.vitage_id %>
+        </td>
+        <!-- Display cellar.vitage_id end -->
+
+        <!-- Display cellar.remark start -->
+        <td>
+          <%= cellar.remark %>
+        </td>
+        <!-- Display cellar.remark end -->
+
+        <!-- Display cellar.size_id start -->
+        <td>
+          <%= cellar.size_id %>
+        </td>
+        <!-- Display cellar.size_id end -->
+
+        <!-- Display cellar.trans_date start -->
+        <td>
+          <%= cellar.trans_date %>
+        </td>
+        <!-- Display cellar.trans_date end -->
+
+        <!-- Display cellar.created_at start -->
+        <td>
+          <%= time_ago_in_words(cellar.created_at) %> ago
+        </td>
+        <!-- Display cellar.created_at end -->
+
+        <!-- Display cellar.updated_at start -->
+        <td>
+          <%= time_ago_in_words(cellar.updated_at) %> ago
+        </td>
+        <!-- Display cellar.updated_at end -->
+
+        <td>
+          <a href="/cellars/<%= cellar.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

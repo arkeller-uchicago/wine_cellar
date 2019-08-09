@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Cellar resource:
+
+  # CREATE
+  get("/cellars/new", { :controller => "cellars", :action => "new_form" })
+  post("/create_cellar", { :controller => "cellars", :action => "create_row" })
+
+  # READ
+  get("/cellars", { :controller => "cellars", :action => "index" })
+  get("/cellars/:id_to_display", { :controller => "cellars", :action => "show" })
+
+  # UPDATE
+  get("/cellars/:prefill_with_id/edit", { :controller => "cellars", :action => "edit_form" })
+  post("/update_cellar/:id_to_modify", { :controller => "cellars", :action => "update_row" })
+
+  # DELETE
+  get("/delete_cellar/:id_to_remove", { :controller => "cellars", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Producer resource:
 
   # CREATE

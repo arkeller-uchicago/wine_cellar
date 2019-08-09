@@ -1,0 +1,128 @@
+<!-- Validation failure messages -->
+<% if @cellar.present? %>
+  <% if @cellar.errors.any? %>
+    <% @cellar.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new cellar
+</h1>
+
+
+<hr>
+
+<!-- Form cellar start -->
+<form action="/create_cellar" method="post">
+<!-- Form cellar end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @cellar.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for wine_id start -->
+  <div class="form-group">
+    <label for="wine_id">
+      Wine
+    </label>
+
+    <!-- Input for wine_id start -->
+    <input type="text" id="wine_id" name="wine_id" class="form-control" value="<%= @cellar.wine_id %>">
+    <!-- Input for wine_id end -->
+  </div>
+  <!-- Label and input for wine_id end -->
+
+  <!-- Label and input for transactions_id start -->
+  <div class="form-group">
+    <label for="transactions_id">
+      Transactions
+    </label>
+
+    <!-- Input for transactions_id start -->
+    <input type="text" id="transactions_id" name="transactions_id" class="form-control" value="<%= @cellar.transactions_id %>">
+    <!-- Input for transactions_id end -->
+  </div>
+  <!-- Label and input for transactions_id end -->
+
+  <!-- Label and input for amount start -->
+  <div class="form-group">
+    <label for="amount">
+      Amount
+    </label>
+
+    <!-- Input for amount start -->
+    <input type="text" id="amount" name="amount" class="form-control" value="<%= @cellar.amount %>">
+    <!-- Input for amount end -->
+  </div>
+  <!-- Label and input for amount end -->
+
+  <!-- Label and input for vitage_id start -->
+  <div class="form-group">
+    <label for="vitage_id">
+      Vitage
+    </label>
+
+    <!-- Input for vitage_id start -->
+    <input type="text" id="vitage_id" name="vitage_id" class="form-control" value="<%= @cellar.vitage_id %>">
+    <!-- Input for vitage_id end -->
+  </div>
+  <!-- Label and input for vitage_id end -->
+
+  <!-- Label and input for remark start -->
+  <div class="form-group">
+    <label for="remark">
+      Remark
+    </label>
+
+    <!-- Input for remark start -->
+    <input type="text" id="remark" name="remark" class="form-control" value="<%= @cellar.remark %>">
+    <!-- Input for remark end -->
+  </div>
+  <!-- Label and input for remark end -->
+
+  <!-- Label and input for size_id start -->
+  <div class="form-group">
+    <label for="size_id">
+      Size
+    </label>
+
+    <!-- Input for size_id start -->
+    <input type="text" id="size_id" name="size_id" class="form-control" value="<%= @cellar.size_id %>">
+    <!-- Input for size_id end -->
+  </div>
+  <!-- Label and input for size_id end -->
+
+  <!-- Label and input for trans_date start -->
+  <div class="form-group">
+    <label for="trans_date">
+      Trans date
+    </label>
+
+    <!-- Input for trans_date start -->
+    <input type="text" id="trans_date" name="trans_date" class="form-control" value="<%= @cellar.trans_date %>">
+    <!-- Input for trans_date end -->
+  </div>
+  <!-- Label and input for trans_date end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create cellar
+  </button>
+</form>
+
+<hr>
+
+<a href="/cellars">
+  Go back
+</a>
