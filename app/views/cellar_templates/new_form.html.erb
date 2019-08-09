@@ -40,7 +40,7 @@
     </label>
 
     <!-- Input for transactions_id start -->
-    <input type="text" id="transactions_id" name="transactions_id" class="form-control">
+    <%= select_tag(:transactions_id, options_from_collection_for_select(Transaction.all, :id, :name, @cellar.transactions_id), :class => "form-control") %>
     <!-- Input for transactions_id end -->
   </div>
   <!-- Label and input for transactions_id end -->
