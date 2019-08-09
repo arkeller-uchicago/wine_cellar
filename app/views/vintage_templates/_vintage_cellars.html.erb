@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_cellar_from_vitage/<%= cellar.id %>">
-          Delete
-        </a>
+        <%if current_user == cellar.user %>
+          <a href="/delete_cellar_from_vintage/<%= cellar.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

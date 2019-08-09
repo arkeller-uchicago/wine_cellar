@@ -13,17 +13,21 @@
 
       <!-- Edit link cellar start -->
       <div class="col">
-        <a href="/cellars/<%= @cellar.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit cellar
-        </a>
+        <% if current_user == @cellar.user %>
+          <a href="/cellars/<%= @cellar.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit cellar
+          </a>
+        <% end %>
       </div>
       <!-- Edit link cellar end -->
 
       <!-- Delete link cellar start -->
       <div class="col">
-        <a href="/delete_cellar/<%= @cellar.id %>" class="btn btn-block btn-outline-secondary">
-          Delete cellar
-        </a>
+        <% if current_user == @cellar.user %>
+          <a href="/delete_cellar/<%= @cellar.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete cellar
+          </a>
+        <% end %>
       </div>
       <!-- Delete link cellar end -->
     </div>
