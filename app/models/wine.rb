@@ -1,6 +1,9 @@
 class Wine < ApplicationRecord
   # Direct associations
 
+  belongs_to :type,
+             :class_name => "Country"
+
   belongs_to :bottle_size,
              :class_name => "Type"
 
