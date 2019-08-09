@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Bottle size resource:
+
+  # CREATE
+  get("/bottle_sizes/new", { :controller => "bottle_sizes", :action => "new_form" })
+  post("/create_bottle_size", { :controller => "bottle_sizes", :action => "create_row" })
+
+  # READ
+  get("/bottle_sizes", { :controller => "bottle_sizes", :action => "index" })
+  get("/bottle_sizes/:id_to_display", { :controller => "bottle_sizes", :action => "show" })
+
+  # UPDATE
+  get("/bottle_sizes/:prefill_with_id/edit", { :controller => "bottle_sizes", :action => "edit_form" })
+  post("/update_bottle_size/:id_to_modify", { :controller => "bottle_sizes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_bottle_size/:id_to_remove", { :controller => "bottle_sizes", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Vintage resource:
 
   # CREATE

@@ -1,0 +1,32 @@
+<h1>
+  Edit bottle size #<%= @bottle_size.id %>
+</h1>
+
+<hr>
+
+<!-- Form bottle_size start -->
+<form action="/update_bottle_size/<%= @bottle_size.id %>" method="post">
+<!-- Form bottle_size end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @bottle_size.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update bottle size
+  </button>
+</form>
+
+<hr>
+
+<a href="/bottle_sizes">
+  Go back
+</a>
