@@ -60,7 +60,7 @@
     </label>
 
     <!-- Input for coutry_id start -->
-    <input type="text" id="coutry_id" name="coutry_id" class="form-control" value="<%= @wine.coutry_id %>">
+    <%= select_tag(:coutry_id, options_from_collection_for_select(Region.all, :id, :name, @wine.coutry_id), :class => "form-control") %>
     <!-- Input for coutry_id end -->
   </div>
   <!-- Label and input for coutry_id end -->
