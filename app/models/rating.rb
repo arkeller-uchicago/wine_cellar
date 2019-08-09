@@ -1,6 +1,9 @@
 class Rating < ApplicationRecord
   # Direct associations
 
+  belongs_to :size,
+             :class_name => "BottleSize"
+
   belongs_to :vintage
 
   belongs_to :wine
