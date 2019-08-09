@@ -1,0 +1,104 @@
+<!-- Validation failure messages -->
+<% if @rating.present? %>
+  <% if @rating.errors.any? %>
+    <% @rating.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new rating
+</h1>
+
+
+<hr>
+
+<!-- Form rating start -->
+<form action="/create_rating" method="post">
+<!-- Form rating end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @rating.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for wine_id start -->
+  <div class="form-group">
+    <label for="wine_id">
+      Wine
+    </label>
+
+    <!-- Input for wine_id start -->
+    <input type="text" id="wine_id" name="wine_id" class="form-control" value="<%= @rating.wine_id %>">
+    <!-- Input for wine_id end -->
+  </div>
+  <!-- Label and input for wine_id end -->
+
+  <!-- Label and input for value start -->
+  <div class="form-group">
+    <label for="value">
+      Value
+    </label>
+
+    <!-- Input for value start -->
+    <input type="text" id="value" name="value" class="form-control" value="<%= @rating.value %>">
+    <!-- Input for value end -->
+  </div>
+  <!-- Label and input for value end -->
+
+  <!-- Label and input for comment start -->
+  <div class="form-group">
+    <label for="comment">
+      Comment
+    </label>
+
+    <!-- Input for comment start -->
+    <textarea id="comment" name="comment" class="form-control" rows="3"><%= @rating.comment %></textarea>
+    <!-- Input for comment end -->
+  </div>
+  <!-- Label and input for comment end -->
+
+  <!-- Label and input for vintage_id start -->
+  <div class="form-group">
+    <label for="vintage_id">
+      Vintage
+    </label>
+
+    <!-- Input for vintage_id start -->
+    <input type="text" id="vintage_id" name="vintage_id" class="form-control" value="<%= @rating.vintage_id %>">
+    <!-- Input for vintage_id end -->
+  </div>
+  <!-- Label and input for vintage_id end -->
+
+  <!-- Label and input for size_id start -->
+  <div class="form-group">
+    <label for="size_id">
+      Size
+    </label>
+
+    <!-- Input for size_id start -->
+    <input type="text" id="size_id" name="size_id" class="form-control" value="<%= @rating.size_id %>">
+    <!-- Input for size_id end -->
+  </div>
+  <!-- Label and input for size_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create rating
+  </button>
+</form>
+
+<hr>
+
+<a href="/ratings">
+  Go back
+</a>
