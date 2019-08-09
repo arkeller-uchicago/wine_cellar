@@ -5,7 +5,7 @@
 <hr>
 
 <!-- Form wine start -->
-<form action="/update_wine/<%= @wine.id %>" method="post">
+<form action="/update_wine/<%= @wine.id %>" method="post" enctype="multipart/form-data">
 <!-- Form wine end -->
 
   <!-- Label and input for name start -->
@@ -87,7 +87,8 @@
     </label>
 
     <!-- Input for picture start -->
-    <input type="text" id="picture" name="picture" class="form-control" value="<%= @wine.picture %>">
+    <%= cl_image_tag(@wine.picture.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="picture" name="picture" class="form-control">
     <!-- Input for picture end -->
   </div>
   <!-- Label and input for picture end -->

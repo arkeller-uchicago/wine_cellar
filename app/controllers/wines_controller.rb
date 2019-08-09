@@ -28,7 +28,7 @@ class WinesController < ApplicationController
     @wine.coutry_id = params.fetch("coutry_id")
     @wine.region_id = params.fetch("region_id")
     @wine.producer_id = params.fetch("producer_id")
-    @wine.picture = params.fetch("picture")
+    @wine.picture = params.fetch("picture") if params.key?("picture")
 
     if @wine.valid?
       @wine.save
@@ -48,7 +48,7 @@ class WinesController < ApplicationController
     @wine.coutry_id = params.fetch("coutry_id")
     @wine.region_id = params.fetch("region_id")
     @wine.producer_id = params.fetch("producer_id")
-    @wine.picture = params.fetch("picture")
+    @wine.picture = params.fetch("picture") if params.key?("picture")
 
     if @wine.valid?
       @wine.save
@@ -68,7 +68,7 @@ class WinesController < ApplicationController
     @wine.coutry_id = params.fetch("coutry_id")
     @wine.region_id = params.fetch("region_id")
     @wine.producer_id = params.fetch("producer_id")
-    @wine.picture = params.fetch("picture")
+    @wine.picture = params.fetch("picture") if params.key?("picture")
 
     if @wine.valid?
       @wine.save
@@ -88,7 +88,7 @@ class WinesController < ApplicationController
     @wine.coutry_id = params.fetch("coutry_id")
     @wine.region_id = params.fetch("region_id")
     @wine.producer_id = params.fetch("producer_id")
-    @wine.picture = params.fetch("picture")
+    @wine.picture = params.fetch("picture") if params.key?("picture")
 
     if @wine.valid?
       @wine.save
@@ -108,7 +108,7 @@ class WinesController < ApplicationController
     @wine.coutry_id = params.fetch("coutry_id")
     @wine.region_id = params.fetch("region_id")
     @wine.producer_id = params.fetch("producer_id")
-    @wine.picture = params.fetch("picture")
+    @wine.picture = params.fetch("picture") if params.key?("picture")
 
     if @wine.valid?
       @wine.save
@@ -134,7 +134,7 @@ class WinesController < ApplicationController
     @wine.coutry_id = params.fetch("coutry_id")
     @wine.region_id = params.fetch("region_id")
     @wine.producer_id = params.fetch("producer_id")
-    @wine.picture = params.fetch("picture")
+    @wine.picture = params.fetch("picture") if params.key?("picture")
 
     if @wine.valid?
       @wine.save
