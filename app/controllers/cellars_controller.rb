@@ -10,7 +10,8 @@ class CellarsController < ApplicationController
   end
 
   def index
-    @cellars = Cellar.page(params[:page]).per(10)
+    @q = Cellar.ransack(params[:q])
+    @cellars = @q.result(:distinct => true).includes(:user, :wine, :vitage, :size, :transactions).page(params[:page]).per(10)
 
     render("cellar_templates/index.html.erb")
   end

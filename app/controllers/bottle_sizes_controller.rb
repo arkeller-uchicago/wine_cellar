@@ -1,6 +1,7 @@
 class BottleSizesController < ApplicationController
   def index
-    @bottle_sizes = BottleSize.page(params[:page]).per(10)
+    @q = BottleSize.ransack(params[:q])
+    @bottle_sizes = @q.result(:distinct => true).includes(:cellars, :ratings).page(params[:page]).per(10)
 
     render("bottle_size_templates/index.html.erb")
   end

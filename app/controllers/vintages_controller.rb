@@ -1,6 +1,7 @@
 class VintagesController < ApplicationController
   def index
-    @vintages = Vintage.page(params[:page]).per(10)
+    @q = Vintage.ransack(params[:q])
+    @vintages = @q.result(:distinct => true).includes(:cellars, :ratings).page(params[:page]).per(10)
 
     render("vintage_templates/index.html.erb")
   end
