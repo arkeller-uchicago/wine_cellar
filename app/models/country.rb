@@ -2,7 +2,7 @@ class Country < ApplicationRecord
   # Direct associations
 
   has_many   :wines,
-             :foreign_key => "type_id",
+             :foreign_key => "coutry_id",
              :dependent => :destroy
 
   # Indirect associations

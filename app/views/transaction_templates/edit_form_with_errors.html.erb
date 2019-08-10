@@ -22,6 +22,14 @@
     <input type="text" id="name" name="name" class="form-control" value="<%= @transaction.name %>">
   </div>
 
+  <div class="form-check">
+    <input type="hidden" value="0" name="negative">
+    <input id="negative" class="form-check-input" name="negative" type="checkbox" value="1" <%= "checked" if @transaction.negative %>>
+    <label for="negative" class="form-check-label">
+      Negative
+    </label>
+  </div>
+
   <button class="btn btn-block btn-outline-secondary">
     Update transaction
   </button>

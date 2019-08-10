@@ -81,7 +81,7 @@
         <td>
           <% if cellar.user.present? %>
             <a href="/users/<%= cellar.user.id %>">
-              <%= cellar.user.email %>
+              <%= cellar.user.created_at %>
             </a>
           <% end %>
         </td>

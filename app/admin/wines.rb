@@ -1,6 +1,6 @@
 ActiveAdmin.register Wine do
 
- permit_params :name, :bottle_size_id, :type_id, :coutry_id, :region_id, :producer_id, :picture
+ permit_params :name, :type_id, :coutry_id, :region_id, :producer_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

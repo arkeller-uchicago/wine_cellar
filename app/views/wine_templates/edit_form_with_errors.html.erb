@@ -12,7 +12,7 @@
 
 <hr>
 
-<form action="/update_wine/<%= @wine.id %>" method="post" enctype="multipart/form-data">
+<form action="/update_wine/<%= @wine.id %>" method="post">
 
   <div class="form-group">
     <label for="name">
@@ -23,19 +23,11 @@
   </div>
 
   <div class="form-group">
-    <label for="bottle_size_id">
-      Bottle size
-    </label>
-
-    <%= select_tag(:bottle_size_id, options_from_collection_for_select(Type.all, :id, :name, @wine.bottle_size_id), :class => "form-control") %>
-  </div>
-
-  <div class="form-group">
     <label for="type_id">
       Type
     </label>
 
-    <%= select_tag(:type_id, options_from_collection_for_select(Country.all, :id, :name, @wine.type_id), :class => "form-control") %>
+    <%= select_tag(:type_id, options_from_collection_for_select(Type.all, :id, :name, @wine.type_id), :class => "form-control") %>
   </div>
 
   <div class="form-group">
@@ -43,7 +35,7 @@
       Coutry
     </label>
 
-    <%= select_tag(:coutry_id, options_from_collection_for_select(Region.all, :id, :name, @wine.coutry_id), :class => "form-control") %>
+    <%= select_tag(:coutry_id, options_from_collection_for_select(Country.all, :id, :name, @wine.coutry_id), :class => "form-control") %>
   </div>
 
   <div class="form-group">
@@ -51,7 +43,7 @@
       Region
     </label>
 
-    <%= select_tag(:region_id, options_from_collection_for_select(Producer.all, :id, :name, @wine.region_id), :class => "form-control") %>
+    <%= select_tag(:region_id, options_from_collection_for_select(Region.all, :id, :name, @wine.region_id), :class => "form-control") %>
   </div>
 
   <div class="form-group">
@@ -59,16 +51,7 @@
       Producer
     </label>
 
-    <input type="text" id="producer_id" name="producer_id" class="form-control" value="<%= @wine.producer_id %>">
-  </div>
-
-  <div class="form-group">
-    <label for="picture">
-      Picture
-    </label>
-
-    <%= cl_image_tag(@wine.picture.to_s, :width => 90, :height => 90, :crop => :thumb) %>
-    <input type="file" id="picture" name="picture" class="form-control">
+    <%= select_tag(:producer_id, options_from_collection_for_select(Producer.all, :id, :name, @wine.producer_id), :class => "form-control") %>
   </div>
 
   <button class="btn btn-block btn-outline-secondary">
