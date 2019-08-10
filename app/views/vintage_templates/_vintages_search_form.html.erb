@@ -54,6 +54,29 @@
   </script>
 
 
+  <div class="form-group">
+    <%= f.label :amount, "Cellar Amount" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :cellars_amount_gteq, :class => "form-control", :placeholder => "Cellar Amount greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :cellars_amount_lteq, :class => "form-control", :placeholder => "Cellar Amount less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :value, "Rating Value" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :ratings_value_gteq, :class => "form-control", :placeholder => "Rating Value greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :ratings_value_lteq, :class => "form-control", :placeholder => "Rating Value less than or equal to" %>
+      </div>
+    </div>
+  </div>
 
 
   <%= f.submit :class => "btn btn-primary btn-block mb-1" %>

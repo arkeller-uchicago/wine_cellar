@@ -7,18 +7,6 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :producer_id, "Producer" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <%= f.text_field :producer_id_gteq, :class => "form-control", :placeholder => "Producer greater than or equal to" %>
-      </div>
-      <div class='col-md-6'>
-        <%= f.text_field :producer_id_lteq, :class => "form-control", :placeholder => "Producer less than or equal to" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="form-group">
     <%= f.label :created_at, "Created at" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
@@ -60,23 +48,47 @@
 
 
   <div class="form-group">
-    <%= f.label :bottle_size_name_cont, "Type name contains" %>
-    <%= f.text_field :bottle_size_name_cont, :class => "form-control", :placeholder => "Type name contains" %>
+    <%= f.label :amount, "Cellar Amount" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :cellars_amount_gteq, :class => "form-control", :placeholder => "Cellar Amount greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :cellars_amount_lteq, :class => "form-control", :placeholder => "Cellar Amount less than or equal to" %>
+      </div>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :type_name_cont, "Country name contains" %>
-    <%= f.text_field :type_name_cont, :class => "form-control", :placeholder => "Country name contains" %>
+    <%= f.label :value, "Rating Value" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :ratings_value_gteq, :class => "form-control", :placeholder => "Rating Value greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :ratings_value_lteq, :class => "form-control", :placeholder => "Rating Value less than or equal to" %>
+      </div>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :coutry_name_cont, "Region name contains" %>
-    <%= f.text_field :coutry_name_cont, :class => "form-control", :placeholder => "Region name contains" %>
+    <%= f.label :type_name_cont, "Type name contains" %>
+    <%= f.text_field :type_name_cont, :class => "form-control", :placeholder => "Type name contains" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :region_name_cont, "Producer name contains" %>
-    <%= f.text_field :region_name_cont, :class => "form-control", :placeholder => "Producer name contains" %>
+    <%= f.label :coutry_name_cont, "Country name contains" %>
+    <%= f.text_field :coutry_name_cont, :class => "form-control", :placeholder => "Country name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :region_name_cont, "Region name contains" %>
+    <%= f.text_field :region_name_cont, :class => "form-control", :placeholder => "Region name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :producer_name_cont, "Producer name contains" %>
+    <%= f.text_field :producer_name_cont, :class => "form-control", :placeholder => "Producer name contains" %>
   </div>
 
 

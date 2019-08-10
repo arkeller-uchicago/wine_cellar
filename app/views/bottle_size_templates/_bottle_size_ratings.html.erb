@@ -11,7 +11,7 @@
     <% @bottle_size.ratings.each do |rating| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
         <a href="/ratings/<%= rating.id %>">
-          <%= rating.user_id %>
+          <%= rating.value %>
         </a>
 
         <a href="/delete_rating_from_size/<%= rating.id %>">
