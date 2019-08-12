@@ -209,10 +209,10 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_wine/:id_to_remove", { :controller => "wines", :action => "destroy_row" })
+  get("/delete_wine_from_producer/:id_to_remove", { :controller => "wines", :action => "destroy_row_from_producer" })
   get("/delete_wine_from_region/:id_to_remove", { :controller => "wines", :action => "destroy_row_from_region" })
   get("/delete_wine_from_coutry/:id_to_remove", { :controller => "wines", :action => "destroy_row_from_coutry" })
   get("/delete_wine_from_type/:id_to_remove", { :controller => "wines", :action => "destroy_row_from_type" })
-  get("/delete_wine_from_bottle_size/:id_to_remove", { :controller => "wines", :action => "destroy_row_from_bottle_size" })
 
   #------------------------------
 

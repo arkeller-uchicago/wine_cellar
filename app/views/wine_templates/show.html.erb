@@ -33,22 +33,11 @@
       </dd>
 
       <dt>
-        Bottle size
-      </dt>
-      <dd>
-        <% if @wine.bottle_size.present? %>
-          <a href="/types/<%= @wine.bottle_size_id %>">
-            <%= @wine.bottle_size.name %>
-          </a>
-        <% end %>
-      </dd>
-
-      <dt>
         Type
       </dt>
       <dd>
         <% if @wine.type.present? %>
-          <a href="/countries/<%= @wine.type_id %>">
+          <a href="/types/<%= @wine.type_id %>">
             <%= @wine.type.name %>
           </a>
         <% end %>
@@ -59,7 +48,7 @@
       </dt>
       <dd>
         <% if @wine.coutry.present? %>
-          <a href="/regions/<%= @wine.coutry_id %>">
+          <a href="/countries/<%= @wine.coutry_id %>">
             <%= @wine.coutry.name %>
           </a>
         <% end %>
@@ -70,7 +59,7 @@
       </dt>
       <dd>
         <% if @wine.region.present? %>
-          <a href="/producers/<%= @wine.region_id %>">
+          <a href="/regions/<%= @wine.region_id %>">
             <%= @wine.region.name %>
           </a>
         <% end %>
@@ -80,14 +69,11 @@
         Producer
       </dt>
       <dd>
-        <%= @wine.producer_id %>
-      </dd>
-
-      <dt>
-        Picture
-      </dt>
-      <dd>
-        <img src="<%= @wine.picture %>" class="img-fluid">
+        <% if @wine.producer.present? %>
+          <a href="/producers/<%= @wine.producer_id %>">
+            <%= @wine.producer.name %>
+          </a>
+        <% end %>
       </dd>
 
       <dt>

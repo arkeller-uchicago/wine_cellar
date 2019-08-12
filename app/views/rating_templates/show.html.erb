@@ -31,7 +31,7 @@
       <dd>
         <% if @rating.user.present? %>
           <a href="/users/<%= @rating.user_id %>">
-            <%= @rating.user.email %>
+            <%= @rating.user.created_at %>
           </a>
         <% end %>
       </dd>
