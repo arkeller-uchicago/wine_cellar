@@ -73,7 +73,7 @@
         <td>
           <% if rating.user.present? %>
             <a href="/users/<%= rating.user.id %>">
-              <%= rating.user.email %>
+              <%= rating.user.created_at %>
             </a>
           <% end %>
         </td>

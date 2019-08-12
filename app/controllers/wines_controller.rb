@@ -1,7 +1,7 @@
 class WinesController < ApplicationController
   def index
     @q = Wine.ransack(params[:q])
-    @wines = @q.result(:distinct => true).includes(:cellars, :ratings, :bottle_size, :type, :coutry, :region).page(params[:page]).per(10)
+    @wines = @q.result(:distinct => true).includes(:cellars, :ratings, :type, :coutry, :region, :producer).page(params[:page]).per(10)
 
     render("wine_templates/index.html.erb")
   end
@@ -24,12 +24,10 @@ class WinesController < ApplicationController
     @wine = Wine.new
 
     @wine.name = params.fetch("name")
-    @wine.bottle_size_id = params.fetch("bottle_size_id")
     @wine.type_id = params.fetch("type_id")
     @wine.coutry_id = params.fetch("coutry_id")
     @wine.region_id = params.fetch("region_id")
     @wine.producer_id = params.fetch("producer_id")
-    @wine.picture = params.fetch("picture") if params.key?("picture")
 
     if @wine.valid?
       @wine.save
@@ -44,17 +42,15 @@ class WinesController < ApplicationController
     @wine = Wine.new
 
     @wine.name = params.fetch("name")
-    @wine.bottle_size_id = params.fetch("bottle_size_id")
     @wine.type_id = params.fetch("type_id")
     @wine.coutry_id = params.fetch("coutry_id")
     @wine.region_id = params.fetch("region_id")
     @wine.producer_id = params.fetch("producer_id")
-    @wine.picture = params.fetch("picture") if params.key?("picture")
 
     if @wine.valid?
       @wine.save
 
-      redirect_to("/types/#{@wine.bottle_size_id}", notice: "Wine created successfully.")
+      redirect_to("/types/#{@wine.type_id}", notice: "Wine created successfully.")
     else
       render("wine_templates/new_form_with_errors.html.erb")
     end
@@ -64,17 +60,15 @@ class WinesController < ApplicationController
     @wine = Wine.new
 
     @wine.name = params.fetch("name")
-    @wine.bottle_size_id = params.fetch("bottle_size_id")
     @wine.type_id = params.fetch("type_id")
     @wine.coutry_id = params.fetch("coutry_id")
     @wine.region_id = params.fetch("region_id")
     @wine.producer_id = params.fetch("producer_id")
-    @wine.picture = params.fetch("picture") if params.key?("picture")
 
     if @wine.valid?
       @wine.save
 
-      redirect_to("/countries/#{@wine.type_id}", notice: "Wine created successfully.")
+      redirect_to("/countries/#{@wine.coutry_id}", notice: "Wine created successfully.")
     else
       render("wine_templates/new_form_with_errors.html.erb")
     end
@@ -84,17 +78,15 @@ class WinesController < ApplicationController
     @wine = Wine.new
 
     @wine.name = params.fetch("name")
-    @wine.bottle_size_id = params.fetch("bottle_size_id")
     @wine.type_id = params.fetch("type_id")
     @wine.coutry_id = params.fetch("coutry_id")
     @wine.region_id = params.fetch("region_id")
     @wine.producer_id = params.fetch("producer_id")
-    @wine.picture = params.fetch("picture") if params.key?("picture")
 
     if @wine.valid?
       @wine.save
 
-      redirect_to("/regions/#{@wine.coutry_id}", notice: "Wine created successfully.")
+      redirect_to("/regions/#{@wine.region_id}", notice: "Wine created successfully.")
     else
       render("wine_templates/new_form_with_errors.html.erb")
     end
@@ -104,17 +96,15 @@ class WinesController < ApplicationController
     @wine = Wine.new
 
     @wine.name = params.fetch("name")
-    @wine.bottle_size_id = params.fetch("bottle_size_id")
     @wine.type_id = params.fetch("type_id")
     @wine.coutry_id = params.fetch("coutry_id")
     @wine.region_id = params.fetch("region_id")
     @wine.producer_id = params.fetch("producer_id")
-    @wine.picture = params.fetch("picture") if params.key?("picture")
 
     if @wine.valid?
       @wine.save
 
-      redirect_to("/producers/#{@wine.region_id}", notice: "Wine created successfully.")
+      redirect_to("/producers/#{@wine.producer_id}", notice: "Wine created successfully.")
     else
       render("wine_templates/new_form_with_errors.html.erb")
     end
@@ -130,12 +120,10 @@ class WinesController < ApplicationController
     @wine = Wine.find(params.fetch("id_to_modify"))
 
     @wine.name = params.fetch("name")
-    @wine.bottle_size_id = params.fetch("bottle_size_id")
     @wine.type_id = params.fetch("type_id")
     @wine.coutry_id = params.fetch("coutry_id")
     @wine.region_id = params.fetch("region_id")
     @wine.producer_id = params.fetch("producer_id")
-    @wine.picture = params.fetch("picture") if params.key?("picture")
 
     if @wine.valid?
       @wine.save
@@ -146,20 +134,12 @@ class WinesController < ApplicationController
     end
   end
 
-  def destroy_row_from_bottle_size
-    @wine = Wine.find(params.fetch("id_to_remove"))
-
-    @wine.destroy
-
-    redirect_to("/types/#{@wine.bottle_size_id}", notice: "Wine deleted successfully.")
-  end
-
   def destroy_row_from_type
     @wine = Wine.find(params.fetch("id_to_remove"))
 
     @wine.destroy
 
-    redirect_to("/countries/#{@wine.type_id}", notice: "Wine deleted successfully.")
+    redirect_to("/types/#{@wine.type_id}", notice: "Wine deleted successfully.")
   end
 
   def destroy_row_from_coutry
@@ -167,7 +147,7 @@ class WinesController < ApplicationController
 
     @wine.destroy
 
-    redirect_to("/regions/#{@wine.coutry_id}", notice: "Wine deleted successfully.")
+    redirect_to("/countries/#{@wine.coutry_id}", notice: "Wine deleted successfully.")
   end
 
   def destroy_row_from_region
@@ -175,7 +155,15 @@ class WinesController < ApplicationController
 
     @wine.destroy
 
-    redirect_to("/producers/#{@wine.region_id}", notice: "Wine deleted successfully.")
+    redirect_to("/regions/#{@wine.region_id}", notice: "Wine deleted successfully.")
+  end
+
+  def destroy_row_from_producer
+    @wine = Wine.find(params.fetch("id_to_remove"))
+
+    @wine.destroy
+
+    redirect_to("/producers/#{@wine.producer_id}", notice: "Wine deleted successfully.")
   end
 
   def destroy_row

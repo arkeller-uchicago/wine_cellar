@@ -11,7 +11,7 @@
     <% @vintage.cellars.each do |cellar| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
         <a href="/cellars/<%= cellar.id %>">
-          <%= cellar.user_id %>
+          <%= cellar.amount %>
         </a>
 
         <%if current_user == cellar.user %>
