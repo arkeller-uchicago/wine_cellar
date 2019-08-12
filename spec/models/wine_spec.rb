@@ -4,13 +4,13 @@ RSpec.describe Wine, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:producer) }
+
     it { should belong_to(:region) }
 
     it { should belong_to(:coutry) }
 
     it { should belong_to(:type) }
-
-    it { should belong_to(:bottle_size) }
 
     it { should have_many(:ratings) }
 

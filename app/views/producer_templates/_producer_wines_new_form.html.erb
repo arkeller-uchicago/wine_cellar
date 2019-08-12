@@ -1,4 +1,4 @@
-<form action="/create_wine" method="post" enctype="multipart/form-data">
+<form action="/create_wine_from_producer" method="post">
 
   <div class="form-group">
     <label for="name">
@@ -9,19 +9,11 @@
   </div>
 
   <div class="form-group">
-    <label for="bottle_size_id">
-      Bottle size
-    </label>
-
-    <%= select_tag(:bottle_size_id, options_from_collection_for_select(Type.all, :id, :name, @wine.bottle_size_id), :class => "form-control") %>
-  </div>
-
-  <div class="form-group">
     <label for="type_id">
       Type
     </label>
 
-    <%= select_tag(:type_id, options_from_collection_for_select(Country.all, :id, :name, @wine.type_id), :class => "form-control") %>
+    <%= select_tag(:type_id, options_from_collection_for_select(Type.all, :id, :name, @wine.type_id), :class => "form-control") %>
   </div>
 
   <div class="form-group">
@@ -29,26 +21,18 @@
       Coutry
     </label>
 
-    <%= select_tag(:coutry_id, options_from_collection_for_select(Region.all, :id, :name, @wine.coutry_id), :class => "form-control") %>
-  </div>
-
-  <input type="hidden" name="region_id" value="<%= @producer.id %>">
-
-  <div class="form-group">
-    <label for="producer_id">
-      Producer
-    </label>
-
-    <input type="text" id="producer_id" name="producer_id" class="form-control" value="<%= @wine.producer_id %>">
+    <%= select_tag(:coutry_id, options_from_collection_for_select(Country.all, :id, :name, @wine.coutry_id), :class => "form-control") %>
   </div>
 
   <div class="form-group">
-    <label for="picture">
-      Picture
+    <label for="region_id">
+      Region
     </label>
 
-    <input type="file" id="picture" name="picture" class="form-control">
+    <%= select_tag(:region_id, options_from_collection_for_select(Region.all, :id, :name, @wine.region_id), :class => "form-control") %>
   </div>
+
+  <input type="hidden" name="producer_id" value="<%= @producer.id %>">
 
   <button class="btn btn-block btn-outline-secondary">
     Create wine

@@ -33,10 +33,6 @@
         </th>
 
         <th>
-          Bottle size
-        </th>
-
-        <th>
           Type
         </th>
 
@@ -50,10 +46,6 @@
 
         <th>
           Producer
-        </th>
-
-        <th>
-          Picture
         </th>
 
         <th>
@@ -79,16 +71,8 @@
         </td>
 
         <td>
-          <% if wine.bottle_size.present? %>
-            <a href="/types/<%= wine.bottle_size.id %>">
-              <%= wine.bottle_size.name %>
-            </a>
-          <% end %>
-        </td>
-
-        <td>
           <% if wine.type.present? %>
-            <a href="/countries/<%= wine.type.id %>">
+            <a href="/types/<%= wine.type.id %>">
               <%= wine.type.name %>
             </a>
           <% end %>
@@ -96,7 +80,7 @@
 
         <td>
           <% if wine.coutry.present? %>
-            <a href="/regions/<%= wine.coutry.id %>">
+            <a href="/countries/<%= wine.coutry.id %>">
               <%= wine.coutry.name %>
             </a>
           <% end %>
@@ -104,18 +88,18 @@
 
         <td>
           <% if wine.region.present? %>
-            <a href="/producers/<%= wine.region.id %>">
+            <a href="/regions/<%= wine.region.id %>">
               <%= wine.region.name %>
             </a>
           <% end %>
         </td>
 
         <td>
-          <%= wine.producer_id %>
-        </td>
-
-        <td>
-          <img src='<%= wine.picture %>' class='img-fluid'>
+          <% if wine.producer.present? %>
+            <a href="/producers/<%= wine.producer.id %>">
+              <%= wine.producer.name %>
+            </a>
+          <% end %>
         </td>
 
         <td>
