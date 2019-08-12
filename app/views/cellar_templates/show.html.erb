@@ -35,7 +35,7 @@
       <dd>
         <% if @cellar.user.present? %>
           <a href="/users/<%= @cellar.user_id %>">
-            <%= @cellar.user.email %>
+            <%= @cellar.user.created_at %>
           </a>
         <% end %>
       </dd>

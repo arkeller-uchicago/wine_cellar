@@ -23,6 +23,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new
 
     @transaction.name = params.fetch("name")
+    @transaction.negative = params.fetch("negative")
 
     if @transaction.valid?
       @transaction.save
@@ -43,6 +44,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params.fetch("id_to_modify"))
 
     @transaction.name = params.fetch("name")
+    @transaction.negative = params.fetch("negative")
 
     if @transaction.valid?
       @transaction.save

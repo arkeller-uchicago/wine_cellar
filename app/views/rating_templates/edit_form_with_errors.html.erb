@@ -19,7 +19,7 @@
       User
     </label>
 
-    <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @rating.user_id), :class => "form-control") %>
+    <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :created_at, @rating.user_id), :class => "form-control") %>
   </div>
 
   <div class="form-group">
